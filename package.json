@@ -7,7 +7,7 @@
     "url": "git://github.com/angular-ui/ui-select.git"
   },
   "style": "dist/select.css",
-  "version": "1.19.8",
+  "version": "1.19.9",
   "devDependencies": {
     "angular": "^1.2.18",
     "angular-mocks": "^1.2.18",
@@ -50,7 +50,8 @@
     "title-case": "^1.1.2"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "build": "gulp build"
   },
   "spm": {
     "main": "dist/select.js",
