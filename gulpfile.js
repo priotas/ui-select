@@ -34,7 +34,7 @@ gulp.task('clean', function(cb) {
 gulp.task('scripts', ['clean'], function() {
 
   var buildTemplates = function () {
-    return gulp.src('src/bootstrap4/*.html')
+    return gulp.src('src/**/*.html')
       .pipe($.minifyHtml({
              empty: true,
              spare: true,

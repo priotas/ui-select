@@ -7,7 +7,7 @@
     "url": "git://github.com/angular-ui/ui-select.git"
   },
   "style": "dist/select.css",
-  "version": "1.20.0",
+  "version": "1.21.0",
   "devDependencies": {
     "angular": "^1.2.18",
     "angular-mocks": "^1.2.18",
