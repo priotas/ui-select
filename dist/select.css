@@ -1,7 +1,7 @@
 /*!
  * @priotas/ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 1.22.0 - 2019-03-28T15:05:15.719Z
+ * Version: 1.22.0 - 2019-03-28T15:37:38.476Z
  * License: MIT
  */
 
@@ -410,7 +410,6 @@ body > .ui-select-bootstrap.open {
 
 .ui-select-bootstrap .ui-select-match-text {
   width: 100%;
-  padding-right: 1em;
 }
 
 .ui-select-bootstrap .ui-select-match-text span {
