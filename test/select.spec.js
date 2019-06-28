@@ -142,11 +142,8 @@ describe('ui-select tests', function () {
     ];
   }));
 
-
-  // DSL (domain-specific language)
-
   function compileTemplate(template) {
-    var el = $compile(angular.element(template))(scope);
+    const el = $compile(angular.element(template))(scope);
     scope.$digest();
     return el;
   }
@@ -1160,7 +1157,7 @@ describe('ui-select tests', function () {
       );
     }
     it("should sort groups using filter", function () {
-      var el = createUiSelect();
+      const el = createUiSelect();
       expect(el.find('.ui-select-choices-group .ui-select-choices-group-label').map(function () {
         return this.textContent;
       }).toArray()).toEqual(["Foo", "Baz", "bar"]);
@@ -3229,31 +3226,33 @@ describe('ui-select tests', function () {
       }
 
       it('should be true by default', function () {
-        var el = setupWithoutAttr();
+        const el = setupWithoutAttr();
+        const uiSelectConfig = $injector.get('uiSelectConfig');
+        expect(el.scope().$select.searchEnabled).toBe(uiSelectConfig.searchEnabled);
         expect(el.scope().$select.searchEnabled).toBe(true);
       });
 
       it('should disable search if default set to false', function () {
-        var uiSelectConfig = $injector.get('uiSelectConfig');
+        const uiSelectConfig = $injector.get('uiSelectConfig');
         uiSelectConfig.searchEnabled = false;
 
-        var el = setupWithoutAttr();
+        const el = setupWithoutAttr();
         expect(el.scope().$select.searchEnabled).not.toBe(true);
       });
 
       it('should be overridden by inline option search-enabled=true', function () {
-        var uiSelectConfig = $injector.get('uiSelectConfig');
+        const uiSelectConfig = $injector.get('uiSelectConfig');
         uiSelectConfig.searchEnabled = false;
 
-        var el = setupWithAttr(true);
+        const el = setupWithAttr(true);
         expect(el.scope().$select.searchEnabled).toBe(true);
       });
 
       it('should be overridden by inline option search-enabled=false', function () {
-        var uiSelectConfig = $injector.get('uiSelectConfig');
+        const uiSelectConfig = $injector.get('uiSelectConfig');
         uiSelectConfig.searchEnabled = true;
 
-        var el = setupWithAttr(false);
+        const el = setupWithAttr(false);
         expect(el.scope().$select.searchEnabled).not.toBe(true);
       });
     });
