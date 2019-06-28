@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const pkg = require('./package.json');
-
 const libraryName = '[name]';
 const outputFile = libraryName + '.js';
 
@@ -25,6 +24,10 @@ const config = env => {
         amd: 'angular',
         root: 'angular'
       }
+    },
+    optimization: {
+      // We no not want to minimize our code.
+      minimize: false
     },
     module: {
       rules: [
