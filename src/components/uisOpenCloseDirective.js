@@ -1,3 +1,5 @@
+import uis from '../common';
+
 uis.directive('uisOpenClose', ['$parse', '$timeout', function ($parse, $timeout) {
   return {
     restrict: 'A',

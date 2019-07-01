@@ -1,16 +1,21 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = env => {
   const isProduction = env && env.production;
   const buildDir = isProduction ? 'pages' : 'pages-dev';
 
-  let plugins = [
+  const plugins = [
     new HtmlWebpackPlugin({ template: './docs/index.html' }),
-    new ExtractTextPlugin('styles.css')
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: !isProduction ? '[name].css' : '[name].[hash].css',
+      chunkFilename: !isProduction ? '[id].css' : '[id].[hash].css'
+    })
   ];
 
   if (isProduction) {
@@ -47,15 +52,11 @@ const config = env => {
           test: /\.js$/,
           exclude: /(node_modules)/,
           use: {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
           }
-        },
-        {
-          test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [{ loader: 'css-loader', options: { importLoaders: 1 } }]
-          })
         },
         {
           test: /\.html$/,
@@ -66,29 +67,17 @@ const config = env => {
           loader: 'file-loader'
         },
         {
-          test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-          })
-        },
-        {
-          test: /\.yml$/,
-          use: ['json-loader', 'yaml-loader']
-        },
-        {
-          test: /\.md$/,
+          test: /\.(sa|sc|c)ss$/,
           use: [
             {
-              loader: 'html-loader'
-            },
-            {
-              loader: 'markdown-loader',
+              loader: MiniCssExtractPlugin.loader,
               options: {
-                gfm: true,
-                tables: true
+                hmr: !isProduction
               }
-            }
+            },
+            'css-loader',
+            'postcss-loader',
+            'sass-loader'
           ]
         }
       ]

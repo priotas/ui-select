@@ -1,3 +1,6 @@
+import uis from '../common';
+import { isNil, KEY } from '../helpers';
+
 uis.directive('uiSelectSingle', ['$timeout','$compile', function($timeout, $compile) {
   return {
     restrict: 'EA',

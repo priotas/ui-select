@@ -1,12 +1,14 @@
-uis.directive('uiSelectHeader', ['uiSelectConfig', function (uiSelectConfig) {
+import uis from '../common';
+
+uis.directive('uiSelectFooter', ['uiSelectConfig', function (uiSelectConfig) {
   return {
     templateUrl: function (tElement) {
       // Needed so the uiSelect can detect the transcluded content
-      tElement.addClass('ui-select-header');
+      tElement.addClass('ui-select-footer');
 
       // Gets theme attribute from parent (ui-select)
       var theme = tElement.parent().attr('theme') || uiSelectConfig.theme;
-      return theme + '/header.tpl.html';
+      return theme + '/footer.tpl.html';
     },
     restrict: 'EA',
     transclude: true,

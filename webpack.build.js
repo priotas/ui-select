@@ -1,17 +1,15 @@
-const webpack = require('webpack');
 const path = require('path');
-const pkg = require('./package.json');
 const libraryName = '[name]';
 const outputFile = libraryName + '.js';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = env => {
   return {
     entry: {
-      select: './src/select.js',
-      'select.tpl': './src/select.tpl.js'
+      select: './src/select.js'
     },
     output: {
-      path: path.resolve(__dirname, 'release'),
+      path: path.resolve(__dirname, 'dist'),
       filename: outputFile,
       library: libraryName,
       libraryTarget: 'umd',
@@ -26,7 +24,6 @@ const config = env => {
       }
     },
     optimization: {
-      // We no not want to minimize our code.
       minimize: false
     },
     module: {
@@ -44,9 +41,26 @@ const config = env => {
               }
             }
           ]
+        },
+        {
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader
+            },
+            'css-loader',
+            'postcss-loader',
+            'sass-loader'
+          ]
         }
       ]
-    }
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+        chunkFilename: '[id].css'
+      })
+    ]
   };
 };
 

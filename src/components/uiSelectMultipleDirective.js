@@ -1,3 +1,6 @@
+import uis from '../common';
+import { isNil, KEY } from '../helpers';
+
 uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelectMinErr, $timeout) {
   return {
     restrict: 'EA',

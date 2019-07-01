@@ -1,3 +1,6 @@
+import uis from '../common';
+import { isNil, KEY } from '../helpers';
+
 /**
  * Contains ui-select "intelligence".
  *

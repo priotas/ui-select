@@ -1,3 +1,5 @@
+import uis from '../common';
+
 uis.directive('uiSelectNoChoice',
     ['uiSelectConfig', function (uiSelectConfig) {
         return {

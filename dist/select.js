@@ -1,72 +1,319 @@
-/*!
- * @priotas/ui-select
- * http://github.com/angular-ui/ui-select
- * Version: 1.3.0 - 2019-06-28T08:14:30.795Z
- * License: MIT
- */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("angular"));
+	else if(typeof define === 'function' && define.amd)
+		define("select", ["angular"], factory);
+	else if(typeof exports === 'object')
+		exports["select"] = factory(require("angular"));
+	else
+		root["select"] = factory(root["angular"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE__0__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 34);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
 
+module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
 
-(function () { 
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = "<ul class=\"ui-select-choices ui-select-choices-content\"> <li class=\"ui-select-choices-group\" id=\"ui-select-choices-{{ $select.generatedId }}\"> <div class=\"divider\" ng-show=\"$select.isGrouped && $index > 0\"></div> <div ng-show=\"$select.isGrouped\" class=\"ui-select-choices-group-label dropdown-header\" ng-bind=\"$group.name\"></div> <div ng-attr-id=\"ui-select-choices-row-{{ $select.generatedId }}-{{$index}}\" class=\"ui-select-choices-row\" ng-class=\"{active: $select.isActive(this), disabled: $select.isDisabled(this)}\" role=\"option\"> <span class=\"ui-select-choices-row-inner\"></span> </div> </li> </ul> ";
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = "<ul class=\"ui-select-choices ui-select-choices-content\"> <li class=\"ui-select-choices-group\" id=\"ui-select-choices-{{ $select.generatedId }}\"> <div class=\"divider\" ng-show=\"$select.isGrouped && $index > 0\"></div> <div ng-show=\"$select.isGrouped\" class=\"ui-select-choices-group-label dropdown-header\" ng-bind=\"$group.name\"></div> <div ng-attr-id=\"ui-select-choices-row-{{ $select.generatedId }}-{{$index}}\" class=\"ui-select-choices-row\" ng-class=\"{active: $select.isActive(this), disabled: $select.isDisabled(this)}\" role=\"option\"> <span class=\"ui-select-choices-row-inner\"></span> </div> </li> </ul> ";
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = "<ul tabindex=\"-1\" class=\"ui-select-choices ui-select-choices-content select2-results\"> <li class=\"ui-select-choices-group\" ng-class=\"{'select2-result-with-children': $select.choiceGrouped($group) }\"> <div ng-show=\"$select.choiceGrouped($group)\" class=\"ui-select-choices-group-label select2-result-label\" ng-bind=\"$group.name\"></div> <ul id=\"ui-select-choices-{{ $select.generatedId }}\" ng-class=\"{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }\"> <li role=\"option\" ng-attr-id=\"ui-select-choices-row-{{ $select.generatedId }}-{{$index}}\" class=\"ui-select-choices-row\" ng-class=\"{'select2-highlighted': $select.isActive(this), 'select2-disabled': $select.isDisabled(this)}\"> <div class=\"select2-result-label ui-select-choices-row-inner\"></div> </li> </ul> </li> </ul> ";
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-choices\"> <div class=\"ui-select-choices-content selectize-dropdown-content\"> <div class=\"ui-select-choices-group optgroup\"> <div ng-show=\"$select.isGrouped\" class=\"ui-select-choices-group-label optgroup-header\" ng-bind=\"$group.name\"></div> <div role=\"option\" class=\"ui-select-choices-row\" ng-class=\"{active: $select.isActive(this), disabled: $select.isDisabled(this)}\"> <div class=\"option ui-select-choices-row-inner\" data-selectable></div> </div> </div> </div> </div> ";
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-footer\" ng-transclude></div> ";
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-header\" ng-transclude></div> ";
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = "<span class=\"ui-select-match\"> <span ng-repeat=\"$item in $select.selected track by $index\"> <span class=\"ui-select-match-item btn btn-default btn-xs\" tabindex=\"-1\" type=\"button\" ng-disabled=\"$select.disabled\" ng-click=\"$selectMultiple.activeMatchIndex = $index;\" ng-class=\"{'btn-primary':$selectMultiple.activeMatchIndex === $index, 'select-locked':$select.isLocked(this, $index)}\" ui-select-sort=\"$select.selected\"> <span class=\"close ui-select-match-close\" ng-hide=\"$select.disabled\" ng-click=\"$selectMultiple.removeChoice($index)\">&nbsp;&times;</span> <span uis-transclude-append></span> </span> </span> </span> ";
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-match\" ng-hide=\"$select.open && $select.searchEnabled\" ng-disabled=\"$select.disabled\" ng-class=\"{'btn-default-focus':$select.focus}\"> <span tabindex=\"-1\" class=\"btn btn-default form-control ui-select-toggle\" aria-label=\"{{ $select.baseTitle }} activate\" ng-disabled=\"$select.disabled\" ng-click=\"$select.activate()\" style=\"outline:0\"> <span ng-show=\"$select.isEmpty()\" class=\"ui-select-placeholder text-muted\">{{$select.placeholder}}</span> <span ng-hide=\"$select.isEmpty()\" class=\"ui-select-match-text pull-left\" ng-class=\"{'ui-select-allow-clear': $select.allowClear && !$select.isEmpty()}\" ng-transclude=\"\"></span> <i class=\"caret pull-right\" ng-click=\"$select.toggle($event)\"></i> <a ng-show=\"$select.allowClear && !$select.isEmpty() && ($select.disabled !== true)\" aria-label=\"{{ $select.baseTitle }} clear\" style=\"margin-right:10px\" ng-click=\"$select.clear($event)\" class=\"btn btn-xs btn-link pull-right\"> <i class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></i> </a> </span> </div> ";
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = "<ul class=\"ui-select-no-choice dropdown-menu\" ng-show=\"$select.items.length == 0\"> <li ng-transclude> </li> </ul> ";
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-container ui-select-multiple ui-select-bootstrap dropdown form-control\" ng-class=\"{open: $select.open}\"> <div> <div class=\"ui-select-match\"></div> <span ng-show=\"$select.open && $select.refreshing && $select.spinnerEnabled\" class=\"ui-select-refreshing {{$select.spinnerClass}}\"></span> <input type=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" class=\"ui-select-search input-xs\" placeholder=\"{{$select.getPlaceholder()}}\" ng-disabled=\"$select.disabled\" ng-click=\"$select.activate()\" ng-model=\"$select.search\" role=\"combobox\" aria-expanded=\"{{$select.open}}\" aria-label=\"{{$select.baseTitle}}\" ng-class=\"{'spinner': $select.refreshing}\" data-disallow-drop=\"data-disallow-drop\"> </div> <div ng-show=\"$select.open && $select.items.length > 0\" class=\"ui-select-dropdown dropdown-menu\"> <div class=\"ui-select-header\"></div> <div class=\"ui-select-choices\"></div> <div class=\"ui-select-footer\"></div> </div> <div class=\"ui-select-no-choice\"></div> </div> ";
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-container ui-select-bootstrap dropdown\" ng-class=\"{open: $select.open}\"> <div class=\"ui-select-match\"></div> <span ng-show=\"$select.open && $select.refreshing  && $select.spinnerEnabled\" class=\"ui-select-refreshing {{$select.spinnerClass}}\"></span> <input type=\"search\" autocomplete=\"off\" tabindex=\"-1\" aria-expanded=\"true\" aria-label=\"{{ $select.baseTitle }}\" aria-owns=\"ui-select-choices-{{ $select.generatedId }}\" class=\"form-control ui-select-search\" ng-class=\"{ 'ui-select-search-hidden' : !$select.searchEnabled }\" placeholder=\"{{$select.placeholder}}\" ng-model=\"$select.search\" ng-show=\"$select.open\"> <div ng-show=\"$select.open && $select.items.length > 0\" class=\"ui-select-dropdown dropdown-menu\"> <div class=\"ui-select-header\"></div> <div class=\"ui-select-choices\"></div> <div class=\"ui-select-footer\"></div> </div> <div class=\"ui-select-no-choice\"></div> </div> ";
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-footer\" ng-transclude></div> ";
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-header\" ng-transclude></div> ";
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = "<span class=\"ui-select-match\"> <span ng-repeat=\"$item in $select.selected track by $index\"> <span class=\"ui-select-match-item btn btn-default btn-xs\" tabindex=\"-1\" type=\"button\" ng-disabled=\"$select.disabled\" ng-click=\"$selectMultiple.activeMatchIndex = $index;\" ng-class=\"{'btn-primary':$selectMultiple.activeMatchIndex === $index, 'select-locked':$select.isLocked(this, $index)}\" ui-select-sort=\"$select.selected\"> <span class=\"close ui-select-match-close\" ng-hide=\"$select.disabled\" ng-click=\"$selectMultiple.removeChoice($index)\">&nbsp;&times;</span> <span uis-transclude-append></span> </span> </span> </span> ";
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-match\" ng-hide=\"$select.open && $select.searchEnabled\" ng-disabled=\"$select.disabled\" ng-class=\"{'btn-default-focus':$select.focus}\"> <span tabindex=\"-1\" class=\"form-control ui-select-toggle\" aria-label=\"{{ $select.baseTitle }} activate\" ng-disabled=\"$select.disabled\" ng-click=\"$select.activate()\" style=\"outline:0\"> <span ng-show=\"$select.isEmpty()\" class=\"ui-select-placeholder text-muted text-truncate\">{{$select.placeholder}}</span> <span ng-hide=\"$select.isEmpty()\" class=\"ui-select-match-text pull-left\" ng-class=\"{'ui-select-allow-clear': $select.allowClear && !$select.isEmpty()}\" ng-transclude=\"\"></span> <i class=\"caret pull-right\" ng-click=\"$select.toggle($event)\"></i> <a ng-show=\"$select.allowClear && !$select.isEmpty() && ($select.disabled !== true)\" aria-label=\"{{ $select.baseTitle }} clear\" style=\"margin-right:10px\" ng-click=\"$select.clear($event)\" class=\"btn btn-sm btn-link pull-right\"> <i class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></i> </a> </span> </div> ";
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = "<ul class=\"ui-select-no-choice dropdown-menu\" ng-show=\"$select.items.length == 0\"> <li ng-transclude> </li> </ul> ";
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-container ui-select-multiple ui-select-bootstrap dropdown form-control\" ng-class=\"{open: $select.open}\"> <div> <div class=\"ui-select-match\"></div> <span ng-show=\"$select.open && $select.refreshing && $select.spinnerEnabled\" class=\"ui-select-refreshing {{$select.spinnerClass}}\"></span> <input type=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" class=\"ui-select-search input-xs\" placeholder=\"{{$select.getPlaceholder()}}\" ng-disabled=\"$select.disabled\" ng-click=\"$select.activate()\" ng-model=\"$select.search\" role=\"combobox\" aria-expanded=\"{{$select.open}}\" aria-label=\"{{$select.baseTitle}}\" ng-class=\"{'spinner': $select.refreshing}\" data-disallow-drop=\"data-disallow-drop\"> </div> <div ng-class=\"{show : $select.open && $select.items.length > 0}\" class=\"ui-select-dropdown dropdown-menu\"> <div class=\"ui-select-header\"></div> <div class=\"ui-select-choices\"></div> <div class=\"ui-select-footer\"></div> </div> <div class=\"ui-select-no-choice\"></div> </div> ";
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-container ui-select-bootstrap dropdown\" ng-class=\"{open: $select.open}\"> <div class=\"ui-select-match\"></div> <span ng-show=\"$select.open && $select.refreshing  && $select.spinnerEnabled\" class=\"ui-select-refreshing {{$select.spinnerClass}}\"></span> <input type=\"search\" autocomplete=\"off\" tabindex=\"-1\" aria-expanded=\"true\" aria-label=\"{{ $select.baseTitle }}\" aria-owns=\"ui-select-choices-{{ $select.generatedId }}\" class=\"form-control ui-select-search\" ng-class=\"{ 'ui-select-search-hidden' : !$select.searchEnabled }\" placeholder=\"{{$select.placeholder}}\" ng-model=\"$select.search\" ng-show=\"$select.open\"> <div ng-class=\"{show : $select.open && $select.items.length > 0}\" class=\"ui-select-dropdown dropdown-menu\"> <div class=\"ui-select-header\"></div> <div class=\"ui-select-choices\"></div> <div class=\"ui-select-footer\"></div> </div> <div class=\"ui-select-no-choice\"></div> </div> ";
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-footer\" ng-transclude></div> ";
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-header\" ng-transclude></div> ";
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+module.exports = " <span class=\"ui-select-match\"> <li class=\"ui-select-match-item select2-search-choice\" ng-repeat=\"$item in $select.selected track by $index\" ng-class=\"{'select2-search-choice-focus':$selectMultiple.activeMatchIndex === $index, 'select2-locked':$select.isLocked(this, $index)}\" ui-select-sort=\"$select.selected\"> <span uis-transclude-append></span> <a href=\"javascript:;\" class=\"ui-select-match-close select2-search-choice-close\" ng-click=\"$selectMultiple.removeChoice($index)\" tabindex=\"-1\"></a> </li> </span> ";
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = " <a class=\"select2-choice ui-select-match\" ng-class=\"{'select2-default': $select.isEmpty()}\" ng-click=\"$select.toggle($event)\" aria-label=\"{{ $select.baseTitle }} select\"> <span ng-show=\"$select.isEmpty()\" class=\"select2-chosen\">{{$select.placeholder}}</span> <span ng-hide=\"$select.isEmpty()\" class=\"select2-chosen\" ng-transclude></span> <abbr ng-if=\"$select.allowClear && !$select.isEmpty()\" class=\"select2-search-choice-close\" ng-click=\"$select.clear($event)\"></abbr> <span class=\"select2-arrow ui-select-toggle\"><b></b></span> </a> ";
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-no-choice dropdown\" ng-show=\"$select.items.length == 0\"> <div class=\"dropdown-content\"> <div data-selectable=\"\" ng-transclude></div> </div> </div>";
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-container ui-select-multiple select2 select2-container select2-container-multi\" ng-class=\"{'select2-container-active select2-dropdown-open open': $select.open,\n                'select2-container-disabled': $select.disabled}\"> <ul class=\"select2-choices\"> <span class=\"ui-select-match\"></span> <li class=\"select2-search-field\"> <input type=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"combobox\" aria-expanded=\"true\" aria-owns=\"ui-select-choices-{{ $select.generatedId }}\" aria-label=\"{{ $select.baseTitle }}\" aria-activedescendant=\"ui-select-choices-row-{{ $select.generatedId }}-{{ $select.activeIndex }}\" class=\"select2-input ui-select-search\" placeholder=\"{{$select.getPlaceholder()}}\" ng-disabled=\"$select.disabled\" ng-hide=\"$select.disabled\" ng-model=\"$select.search\" ng-click=\"$select.activate()\" style=\"width:34px\" data-disallow-drop=\"data-disallow-drop\"> </li> </ul> <div class=\"ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active\" ng-class=\"{'select2-display-none': !$select.open || $select.items.length === 0}\"> <div class=\"ui-select-header\"></div> <div class=\"ui-select-choices\"></div> <div class=\"ui-select-footer\"></div> </div> </div> ";
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-container select2 select2-container\" ng-class=\"{'select2-container-active select2-dropdown-open open': $select.open,\n                'select2-container-disabled': $select.disabled,\n                'select2-container-active': $select.focus,\n                'select2-allowclear': $select.allowClear && !$select.isEmpty()}\"> <div class=\"ui-select-match\"></div> <div class=\"ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active\" ng-class=\"{'select2-display-none': !$select.open}\"> <div class=\"search-container\" ng-class=\"{'ui-select-search-hidden':!$select.searchEnabled, 'select2-search':$select.searchEnabled}\"> <input type=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" ng-class=\"{'select2-active': $select.refreshing}\" role=\"combobox\" aria-expanded=\"true\" aria-owns=\"ui-select-choices-{{ $select.generatedId }}\" aria-label=\"{{ $select.baseTitle }}\" class=\"ui-select-search select2-input\" ng-model=\"$select.search\"> </div> <div class=\"ui-select-header\"></div> <div class=\"ui-select-choices\"></div> <div class=\"ui-select-no-choice\"></div> <div class=\"ui-select-footer\"></div> </div> </div> ";
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-footer\" ng-transclude></div> ";
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-header\" ng-transclude></div> ";
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-match\" data-value ng-repeat=\"$item in $select.selected track by $index\" ng-click=\"$selectMultiple.activeMatchIndex = $index;\" ng-class=\"{'active':$selectMultiple.activeMatchIndex === $index}\" ui-select-sort=\"$select.selected\"> <span class=\"ui-select-match-item\" ng-class=\"{'select-locked':$select.isLocked(this, $index)}\"> <span uis-transclude-append></span> <span class=\"remove ui-select-match-close\" ng-hide=\"$select.disabled\" ng-click=\"$selectMultiple.removeChoice($index)\">&times;</span> </span> </div>";
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+module.exports = "<div ng-hide=\"$select.searchEnabled && ($select.open || $select.isEmpty())\" class=\"ui-select-match\"> <span ng-show=\"!$select.searchEnabled && ($select.isEmpty() || $select.open)\" class=\"ui-select-placeholder text-muted\">{{$select.placeholder}}</span> <span ng-hide=\"$select.isEmpty() || $select.open\" ng-transclude></span> </div> ";
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-no-choice selectize-dropdown\" ng-show=\"$select.items.length == 0\"> <div class=\"selectize-dropdown-content\"> <div data-selectable=\"\" ng-transclude></div> </div> </div> ";
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-container selectize-control multi plugin-remove_button\" ng-class=\"{'open': $select.open}\"> <div class=\"selectize-input\" ng-class=\"{'focus': $select.open, 'disabled': $select.disabled, 'selectize-focus' : $select.focus}\" ng-click=\"$select.open && !$select.searchEnabled ? $select.toggle($event) : $select.activate()\"> <div class=\"ui-select-match\"></div> <input type=\"search\" autocomplete=\"off\" tabindex=\"-1\" class=\"ui-select-search\" ng-class=\"{'ui-select-search-hidden':!$select.searchEnabled}\" placeholder=\"{{$select.getPlaceholder()}}\" ng-model=\"$select.search\" ng-disabled=\"$select.disabled\" aria-expanded=\"{{$select.open}}\" aria-label=\"{{ $select.baseTitle }}\" data-disallow-drop=\"data-disallow-drop\"> </div> <div ng-show=\"$select.open\" class=\"ui-select-dropdown selectize-dropdown\" ng-class=\"{'single': !$select.multiple, 'multi': $select.multiple}\"> <div class=\"ui-select-header\"></div> <div class=\"ui-select-choices\"></div> <div class=\"ui-select-footer\"></div> </div> <div class=\"ui-select-no-choice\"></div> </div> ";
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ui-select-container selectize-control single\" ng-class=\"{'open': $select.open}\"> <div class=\"selectize-input\" ng-class=\"{'focus': $select.open, 'disabled': $select.disabled, 'selectize-focus' : $select.focus}\" ng-click=\"$select.open && !$select.searchEnabled ? $select.toggle($event) : $select.activate()\"> <div class=\"ui-select-match\"></div> <input type=\"search\" autocomplete=\"off\" tabindex=\"-1\" class=\"ui-select-search ui-select-toggle\" ng-class=\"{'ui-select-search-hidden':!$select.searchEnabled}\" ng-click=\"$select.toggle($event)\" placeholder=\"{{$select.placeholder}}\" ng-model=\"$select.search\" ng-hide=\"!$select.isEmpty() && !$select.open\" ng-disabled=\"$select.disabled\" aria-label=\"{{ $select.baseTitle }}\"> </div> <div ng-show=\"$select.open\" class=\"ui-select-dropdown selectize-dropdown\" ng-class=\"{'single': !$select.multiple, 'multi': $select.multiple}\"> <div class=\"ui-select-header\"></div> <div class=\"ui-select-choices\"></div> <div class=\"ui-select-footer\"></div> </div> <div class=\"ui-select-no-choice\"></div> </div> ";
+
+/***/ }),
+/* 34 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-var KEY = {
-    TAB: 9,
-    ENTER: 13,
-    ESC: 27,
-    SPACE: 32,
-    LEFT: 37,
-    UP: 38,
-    RIGHT: 39,
-    DOWN: 40,
-    SHIFT: 16,
-    CTRL: 17,
-    ALT: 18,
-    PAGE_UP: 33,
-    PAGE_DOWN: 34,
-    HOME: 36,
-    END: 35,
-    BACKSPACE: 8,
-    DELETE: 46,
-    COMMAND: 91,
+__webpack_require__.r(__webpack_exports__);
 
-    MAP: { 91 : "COMMAND", 8 : "BACKSPACE" , 9 : "TAB" , 13 : "ENTER" , 16 : "SHIFT" , 17 : "CTRL" , 18 : "ALT" , 19 : "PAUSEBREAK" , 20 : "CAPSLOCK" , 27 : "ESC" , 32 : "SPACE" , 33 : "PAGE_UP", 34 : "PAGE_DOWN" , 35 : "END" , 36 : "HOME" , 37 : "LEFT" , 38 : "UP" , 39 : "RIGHT" , 40 : "DOWN" , 43 : "+" , 44 : "PRINTSCREEN" , 45 : "INSERT" , 46 : "DELETE", 48 : "0" , 49 : "1" , 50 : "2" , 51 : "3" , 52 : "4" , 53 : "5" , 54 : "6" , 55 : "7" , 56 : "8" , 57 : "9" , 59 : ";", 61 : "=" , 65 : "A" , 66 : "B" , 67 : "C" , 68 : "D" , 69 : "E" , 70 : "F" , 71 : "G" , 72 : "H" , 73 : "I" , 74 : "J" , 75 : "K" , 76 : "L", 77 : "M" , 78 : "N" , 79 : "O" , 80 : "P" , 81 : "Q" , 82 : "R" , 83 : "S" , 84 : "T" , 85 : "U" , 86 : "V" , 87 : "W" , 88 : "X" , 89 : "Y" , 90 : "Z", 96 : "0" , 97 : "1" , 98 : "2" , 99 : "3" , 100 : "4" , 101 : "5" , 102 : "6" , 103 : "7" , 104 : "8" , 105 : "9", 106 : "*" , 107 : "+" , 109 : "-" , 110 : "." , 111 : "/", 112 : "F1" , 113 : "F2" , 114 : "F3" , 115 : "F4" , 116 : "F5" , 117 : "F6" , 118 : "F7" , 119 : "F8" , 120 : "F9" , 121 : "F10" , 122 : "F11" , 123 : "F12", 144 : "NUMLOCK" , 145 : "SCROLLLOCK" , 186 : ";" , 187 : "=" , 188 : "," , 189 : "-" , 190 : "." , 191 : "/" , 192 : "`" , 219 : "[" , 220 : "\\" , 221 : "]" , 222 : "'"
-    },
+// EXTERNAL MODULE: ./src/select.scss
+var src_select = __webpack_require__(5);
 
-    isControl: function (e) {
-        var k = e.which;
-        switch (k) {
-        case KEY.COMMAND:
-        case KEY.SHIFT:
-        case KEY.CTRL:
-        case KEY.ALT:
-            return true;
-        }
+// EXTERNAL MODULE: external {"commonjs":"angular","commonjs2":"angular","amd":"angular","root":"angular"}
+var external_commonjs_angular_commonjs2_angular_amd_angular_root_angular_ = __webpack_require__(0);
+var external_commonjs_angular_commonjs2_angular_amd_angular_root_angular_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_angular_commonjs2_angular_amd_angular_root_angular_);
 
-        if (e.metaKey || e.ctrlKey || e.altKey) return true;
+// CONCATENATED MODULE: ./src/common.js
 
-        return false;
-    },
-    isFunctionKey: function (k) {
-        k = k.which ? k.which : k;
-        return k >= 112 && k <= 123;
-    },
-    isVerticalMovement: function (k){
-      return ~[KEY.UP, KEY.DOWN].indexOf(k);
-    },
-    isHorizontalMovement: function (k){
-      return ~[KEY.LEFT,KEY.RIGHT,KEY.BACKSPACE,KEY.DELETE].indexOf(k);
-    },
-    toSeparator: function (k) {
-      var sep = {ENTER:"\n",TAB:"\t",SPACE:" "}[k];
-      if (sep) return sep;
-      // return undefined for special keys other than enter, tab or space.
-      // no way to use them to cut strings.
-      return KEY[k] ? undefined : k;
-    }
-  };
-
-function isNil(value) {
-  return angular.isUndefined(value) || value === null;
-}
 
 /**
  * Add querySelectorAll() to jqLite.
@@ -77,17 +324,17 @@ function isNil(value) {
  * See jqLite.find - why not use querySelectorAll? https://github.com/angular/angular.js/issues/3586
  * See feat(jqLite): use querySelectorAll instead of getElementsByTagName in jqLite.find https://github.com/angular/angular.js/pull/3598
  */
-if (angular.element.prototype.querySelectorAll === undefined) {
-  angular.element.prototype.querySelectorAll = function(selector) {
-    return angular.element(this[0].querySelectorAll(selector));
+if (external_commonjs_angular_commonjs2_angular_amd_angular_root_angular_default.a.element.prototype.querySelectorAll === undefined) {
+  external_commonjs_angular_commonjs2_angular_amd_angular_root_angular_default.a.element.prototype.querySelectorAll = function(selector) {
+    return external_commonjs_angular_commonjs2_angular_amd_angular_root_angular_default.a.element(this[0].querySelectorAll(selector));
   };
 }
 
 /**
  * Add closest() to jqLite.
  */
-if (angular.element.prototype.closest === undefined) {
-  angular.element.prototype.closest = function( selector) {
+if (external_commonjs_angular_commonjs2_angular_amd_angular_root_angular_default.a.element.prototype.closest === undefined) {
+  external_commonjs_angular_commonjs2_angular_amd_angular_root_angular_default.a.element.prototype.closest = function( selector) {
     var elem = this[0];
     var matchesSelector = elem.matches || elem.webkitMatchesSelector || elem.mozMatchesSelector || elem.msMatchesSelector;
 
@@ -104,7 +351,7 @@ if (angular.element.prototype.closest === undefined) {
 
 var latestId = 0;
 
-var uis = angular.module('ui.select', [])
+var uis = external_commonjs_angular_commonjs2_angular_amd_angular_root_angular_default.a.module('ui.select', [])
 
 .constant('uiSelectConfig', {
   theme: 'bootstrap4',
@@ -128,7 +375,7 @@ var uis = angular.module('ui.select', [])
 
 // See Rename minErr and make it accessible from outside https://github.com/angular/angular.js/issues/6913
 .service('uiSelectMinErr', function() {
-  var minErr = angular.$$minErr('ui.select');
+  var minErr = external_commonjs_angular_commonjs2_angular_amd_angular_root_angular_default.a.$$minErr('ui.select');
   return function() {
     var error = minErr.apply(this, arguments);
     var message = error.message.replace(new RegExp('\nhttp://errors.angularjs.org/.*'), '');
@@ -184,7 +431,12 @@ var uis = angular.module('ui.select', [])
   };
 }]);
 
-uis.directive('uiSelectChoices',
+/* harmony default export */ var common = (uis);
+
+// CONCATENATED MODULE: ./src/components/uiSelectChoicesDirective.js
+
+
+common.directive('uiSelectChoices',
   ['uiSelectConfig', 'uisRepeatParser', 'uiSelectMinErr', '$compile', '$window',
   function(uiSelectConfig, RepeatParser, uiSelectMinErr, $compile, $window) {
 
@@ -275,13 +527,181 @@ uis.directive('uiSelectChoices',
   };
 }]);
 
+// CONCATENATED MODULE: ./src/helpers.js
+var KEY = {
+  TAB: 9,
+  ENTER: 13,
+  ESC: 27,
+  SPACE: 32,
+  LEFT: 37,
+  UP: 38,
+  RIGHT: 39,
+  DOWN: 40,
+  SHIFT: 16,
+  CTRL: 17,
+  ALT: 18,
+  PAGE_UP: 33,
+  PAGE_DOWN: 34,
+  HOME: 36,
+  END: 35,
+  BACKSPACE: 8,
+  DELETE: 46,
+  COMMAND: 91,
+
+  MAP: {
+    91: 'COMMAND',
+    8: 'BACKSPACE',
+    9: 'TAB',
+    13: 'ENTER',
+    16: 'SHIFT',
+    17: 'CTRL',
+    18: 'ALT',
+    19: 'PAUSEBREAK',
+    20: 'CAPSLOCK',
+    27: 'ESC',
+    32: 'SPACE',
+    33: 'PAGE_UP',
+    34: 'PAGE_DOWN',
+    35: 'END',
+    36: 'HOME',
+    37: 'LEFT',
+    38: 'UP',
+    39: 'RIGHT',
+    40: 'DOWN',
+    43: '+',
+    44: 'PRINTSCREEN',
+    45: 'INSERT',
+    46: 'DELETE',
+    48: '0',
+    49: '1',
+    50: '2',
+    51: '3',
+    52: '4',
+    53: '5',
+    54: '6',
+    55: '7',
+    56: '8',
+    57: '9',
+    59: ';',
+    61: '=',
+    65: 'A',
+    66: 'B',
+    67: 'C',
+    68: 'D',
+    69: 'E',
+    70: 'F',
+    71: 'G',
+    72: 'H',
+    73: 'I',
+    74: 'J',
+    75: 'K',
+    76: 'L',
+    77: 'M',
+    78: 'N',
+    79: 'O',
+    80: 'P',
+    81: 'Q',
+    82: 'R',
+    83: 'S',
+    84: 'T',
+    85: 'U',
+    86: 'V',
+    87: 'W',
+    88: 'X',
+    89: 'Y',
+    90: 'Z',
+    96: '0',
+    97: '1',
+    98: '2',
+    99: '3',
+    100: '4',
+    101: '5',
+    102: '6',
+    103: '7',
+    104: '8',
+    105: '9',
+    106: '*',
+    107: '+',
+    109: '-',
+    110: '.',
+    111: '/',
+    112: 'F1',
+    113: 'F2',
+    114: 'F3',
+    115: 'F4',
+    116: 'F5',
+    117: 'F6',
+    118: 'F7',
+    119: 'F8',
+    120: 'F9',
+    121: 'F10',
+    122: 'F11',
+    123: 'F12',
+    144: 'NUMLOCK',
+    145: 'SCROLLLOCK',
+    186: ';',
+    187: '=',
+    188: ',',
+    189: '-',
+    190: '.',
+    191: '/',
+    192: '`',
+    219: '[',
+    220: '\\',
+    221: ']',
+    222: "'"
+  },
+
+  isControl: function(e) {
+    var k = e.which;
+    switch (k) {
+      case KEY.COMMAND:
+      case KEY.SHIFT:
+      case KEY.CTRL:
+      case KEY.ALT:
+        return true;
+    }
+
+    if (e.metaKey || e.ctrlKey || e.altKey) return true;
+
+    return false;
+  },
+  isFunctionKey: function(k) {
+    k = k.which ? k.which : k;
+    return k >= 112 && k <= 123;
+  },
+  isVerticalMovement: function(k) {
+    return ~[KEY.UP, KEY.DOWN].indexOf(k);
+  },
+  isHorizontalMovement: function(k) {
+    return ~[KEY.LEFT, KEY.RIGHT, KEY.BACKSPACE, KEY.DELETE].indexOf(k);
+  },
+  toSeparator: function(k) {
+    var sep = { ENTER: '\n', TAB: '\t', SPACE: ' ' }[k];
+    if (sep) return sep;
+    // return undefined for special keys other than enter, tab or space.
+    // no way to use them to cut strings.
+    return KEY[k] ? undefined : k;
+  }
+};
+
+function isNil(value) {
+  return angular.isUndefined(value) || value === null;
+}
+
+
+
+// CONCATENATED MODULE: ./src/components/uiSelectController.js
+
+
+
 /**
  * Contains ui-select "intelligence".
  *
  * The goal is to limit dependency on the DOM whenever possible and
  * put as much logic in the controller (instead of the link functions) as possible so it can be easily tested.
  */
-uis.controller('uiSelectCtrl',
+common.controller('uiSelectCtrl',
   ['$scope', '$element', '$timeout', '$filter', '$$uisDebounce', 'uisRepeatParser', 'uiSelectMinErr', 'uiSelectConfig', '$parse', '$injector', '$window',
   function($scope, $element, $timeout, $filter, $$uisDebounce, RepeatParser, uiSelectMinErr, uiSelectConfig, $parse, $injector, $window) {
 
@@ -1043,7 +1463,10 @@ uis.controller('uiSelectCtrl',
   });
 }]);
 
-uis.directive('uiSelect',
+// CONCATENATED MODULE: ./src/components/uiSelectDirective.js
+
+
+common.directive('uiSelect',
   ['$document', 'uiSelectConfig', 'uiSelectMinErr', 'uisOffset', '$compile', '$parse', '$timeout', '$window',
   function($document, uiSelectConfig, uiSelectMinErr, uisOffset, $compile, $parse, $timeout, $window) {
 
@@ -1489,7 +1912,10 @@ uis.directive('uiSelect',
   };
 }]);
 
-uis.directive('uiSelectFooter', ['uiSelectConfig', function (uiSelectConfig) {
+// CONCATENATED MODULE: ./src/components/uiSelectFooterDirective.js
+
+
+common.directive('uiSelectFooter', ['uiSelectConfig', function (uiSelectConfig) {
   return {
     templateUrl: function (tElement) {
       // Needed so the uiSelect can detect the transcluded content
@@ -1505,7 +1931,10 @@ uis.directive('uiSelectFooter', ['uiSelectConfig', function (uiSelectConfig) {
   };
 }]);
 
-uis.directive('uiSelectHeader', ['uiSelectConfig', function (uiSelectConfig) {
+// CONCATENATED MODULE: ./src/components/uiSelectHeaderDirective.js
+
+
+common.directive('uiSelectHeader', ['uiSelectConfig', function (uiSelectConfig) {
   return {
     templateUrl: function (tElement) {
       // Needed so the uiSelect can detect the transcluded content
@@ -1521,7 +1950,10 @@ uis.directive('uiSelectHeader', ['uiSelectConfig', function (uiSelectConfig) {
   };
 }]);
 
-uis.directive('uiSelectHeaderGroupSelectable', ['$timeout', function($timeout) {
+// CONCATENATED MODULE: ./src/components/uiSelectHeaderGroupSelectableDirective.js
+
+
+common.directive('uiSelectHeaderGroupSelectable', ['$timeout', function($timeout) {
   return {
     restrict: 'EA',
     require: ['^uiSelect'],
@@ -1600,7 +2032,10 @@ uis.directive('uiSelectHeaderGroupSelectable', ['$timeout', function($timeout) {
   };
 }]);
 
-uis.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
+// CONCATENATED MODULE: ./src/components/uiSelectMatchDirective.js
+
+
+common.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
   return {
     restrict: 'EA',
     require: '^uiSelect',
@@ -1649,7 +2084,11 @@ uis.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
   }
 }]);
 
-uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelectMinErr, $timeout) {
+// CONCATENATED MODULE: ./src/components/uiSelectMultipleDirective.js
+
+
+
+common.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelectMinErr, $timeout) {
   return {
     restrict: 'EA',
     require: ['^uiSelect', '^ngModel'],
@@ -2104,7 +2543,10 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
   };
 }]);
 
-uis.directive('uiSelectNoChoice',
+// CONCATENATED MODULE: ./src/components/uiSelectNoChoiceDirective.js
+
+
+common.directive('uiSelectNoChoice',
     ['uiSelectConfig', function (uiSelectConfig) {
         return {
             restrict: 'EA',
@@ -2122,7 +2564,11 @@ uis.directive('uiSelectNoChoice',
         };
     }]);
 
-uis.directive('uiSelectSingle', ['$timeout','$compile', function($timeout, $compile) {
+// CONCATENATED MODULE: ./src/components/uiSelectSingleDirective.js
+
+
+
+common.directive('uiSelectSingle', ['$timeout','$compile', function($timeout, $compile) {
   return {
     restrict: 'EA',
     require: ['^uiSelect', '^ngModel'],
@@ -2266,8 +2712,11 @@ uis.directive('uiSelectSingle', ['$timeout','$compile', function($timeout, $comp
   };
 }]);
 
+// CONCATENATED MODULE: ./src/components/uiSelectSortDirective.js
+
+
 // Make multiple matches sortable
-uis.directive('uiSelectSort', ['$timeout', 'uiSelectConfig', 'uiSelectMinErr', function($timeout, uiSelectConfig, uiSelectMinErr) {
+common.directive('uiSelectSort', ['$timeout', 'uiSelectConfig', 'uiSelectMinErr', function($timeout, uiSelectConfig, uiSelectMinErr) {
   return {
     require: ['^^uiSelect', '^ngModel'],
     link: function(scope, element, attrs, ctrls) {
@@ -2419,32 +2868,10 @@ uis.directive('uiSelectSort', ['$timeout', 'uiSelectConfig', 'uiSelectMinErr', f
   };
 }]);
 
-/**
- * Debounces functions
- *
- * Taken from UI Bootstrap $$debounce source code
- * See https://github.com/angular-ui/bootstrap/blob/master/src/debounce/debounce.js
- *
- */
-uis.factory('$$uisDebounce', ['$timeout', function($timeout) {
-  return function(callback, debounceTime) {
-    var timeoutPromise;
+// CONCATENATED MODULE: ./src/components/uisOpenCloseDirective.js
 
-    return function() {
-      var self = this;
-      var args = Array.prototype.slice.call(arguments);
-      if (timeoutPromise) {
-        $timeout.cancel(timeoutPromise);
-      }
 
-      timeoutPromise = $timeout(function() {
-        callback.apply(self, args);
-      }, debounceTime);
-    };
-  };
-}]);
-
-uis.directive('uisOpenClose', ['$parse', '$timeout', function ($parse, $timeout) {
+common.directive('uisOpenClose', ['$parse', '$timeout', function ($parse, $timeout) {
   return {
     restrict: 'A',
     require: 'uiSelect',
@@ -2464,6 +2891,37 @@ uis.directive('uisOpenClose', ['$parse', '$timeout', function ($parse, $timeout)
   };
 }]);
 
+// CONCATENATED MODULE: ./src/services/uisDebounceService.js
+
+
+/**
+ * Debounces functions
+ *
+ * Taken from UI Bootstrap $$debounce source code
+ * See https://github.com/angular-ui/bootstrap/blob/master/src/debounce/debounce.js
+ *
+ */
+common.factory('$$uisDebounce', ['$timeout', function($timeout) {
+  return function(callback, debounceTime) {
+    var timeoutPromise;
+
+    return function() {
+      var self = this;
+      var args = Array.prototype.slice.call(arguments);
+      if (timeoutPromise) {
+        $timeout.cancel(timeoutPromise);
+      }
+
+      timeoutPromise = $timeout(function() {
+        callback.apply(self, args);
+      }, debounceTime);
+    };
+  };
+}]);
+
+// CONCATENATED MODULE: ./src/services/uisRepeatParserService.js
+
+
 /**
  * Parses "repeat" attribute.
  *
@@ -2474,7 +2932,7 @@ uis.directive('uisOpenClose', ['$parse', '$timeout', function ($parse, $timeout)
  * https://github.com/angular-ui/ui-select/commit/5dd63ad#commitcomment-5504697
  */
 
-uis.service('uisRepeatParser', ['uiSelectMinErr','$parse', function(uiSelectMinErr, $parse) {
+common.service('uisRepeatParser', ['uiSelectMinErr','$parse', function(uiSelectMinErr, $parse) {
   var self = this;
 
   /**
@@ -2548,36 +3006,185 @@ uis.service('uisRepeatParser', ['uiSelectMinErr','$parse', function(uiSelectMinE
 
 }]);
 
-}());
-angular.module("ui.select").run(["$templateCache", function($templateCache) {$templateCache.put("bootstrap/choices.tpl.html","<ul class=\"ui-select-choices ui-select-choices-content\"><li class=\"ui-select-choices-group\" id=\"ui-select-choices-{{ $select.generatedId }}\"><div class=\"divider\" ng-show=\"$select.isGrouped && $index > 0\"></div><div ng-show=\"$select.isGrouped\" class=\"ui-select-choices-group-label dropdown-header\" ng-bind=\"$group.name\"></div><div ng-attr-id=\"ui-select-choices-row-{{ $select.generatedId }}-{{$index}}\" class=\"ui-select-choices-row\" ng-class=\"{active: $select.isActive(this), disabled: $select.isDisabled(this)}\" role=\"option\"><span class=\"ui-select-choices-row-inner\"></span></div></li></ul>");
-$templateCache.put("bootstrap/footer.tpl.html","<div class=\"ui-select-footer\" ng-transclude=\"\"></div>");
-$templateCache.put("bootstrap/header.tpl.html","<div class=\"ui-select-header\" ng-transclude=\"\"></div>");
-$templateCache.put("bootstrap/match-multiple.tpl.html","<span class=\"ui-select-match\"><span ng-repeat=\"$item in $select.selected track by $index\"><span class=\"ui-select-match-item btn btn-default btn-xs\" tabindex=\"-1\" type=\"button\" ng-disabled=\"$select.disabled\" ng-click=\"$selectMultiple.activeMatchIndex = $index;\" ng-class=\"{\'btn-primary\':$selectMultiple.activeMatchIndex === $index, \'select-locked\':$select.isLocked(this, $index)}\" ui-select-sort=\"$select.selected\"><span class=\"close ui-select-match-close\" ng-hide=\"$select.disabled\" ng-click=\"$selectMultiple.removeChoice($index)\">&nbsp;&times;</span> <span uis-transclude-append=\"\"></span></span></span></span>");
-$templateCache.put("bootstrap/match.tpl.html","<div class=\"ui-select-match\" ng-hide=\"$select.open && $select.searchEnabled\" ng-disabled=\"$select.disabled\" ng-class=\"{\'btn-default-focus\':$select.focus}\"><span tabindex=\"-1\" class=\"btn btn-default form-control ui-select-toggle\" aria-label=\"{{ $select.baseTitle }} activate\" ng-disabled=\"$select.disabled\" ng-click=\"$select.activate()\" style=\"outline: 0;\"><span ng-show=\"$select.isEmpty()\" class=\"ui-select-placeholder text-muted\">{{$select.placeholder}}</span> <span ng-hide=\"$select.isEmpty()\" class=\"ui-select-match-text pull-left\" ng-class=\"{\'ui-select-allow-clear\': $select.allowClear && !$select.isEmpty()}\" ng-transclude=\"\"></span> <i class=\"caret pull-right\" ng-click=\"$select.toggle($event)\"></i> <a ng-show=\"$select.allowClear && !$select.isEmpty() && ($select.disabled !== true)\" aria-label=\"{{ $select.baseTitle }} clear\" style=\"margin-right: 10px\" ng-click=\"$select.clear($event)\" class=\"btn btn-xs btn-link pull-right\"><i class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></i></a></span></div>");
-$templateCache.put("bootstrap/no-choice.tpl.html","<ul class=\"ui-select-no-choice dropdown-menu\" ng-show=\"$select.items.length == 0\"><li ng-transclude=\"\"></li></ul>");
-$templateCache.put("bootstrap/select-multiple.tpl.html","<div class=\"ui-select-container ui-select-multiple ui-select-bootstrap dropdown form-control\" ng-class=\"{open: $select.open}\"><div><div class=\"ui-select-match\"></div><span ng-show=\"$select.open && $select.refreshing && $select.spinnerEnabled\" class=\"ui-select-refreshing {{$select.spinnerClass}}\"></span> <input type=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" class=\"ui-select-search input-xs\" placeholder=\"{{$select.getPlaceholder()}}\" ng-disabled=\"$select.disabled\" ng-click=\"$select.activate()\" ng-model=\"$select.search\" role=\"combobox\" aria-expanded=\"{{$select.open}}\" aria-label=\"{{$select.baseTitle}}\" ng-class=\"{\'spinner\': $select.refreshing}\" data-disallow-drop=\"data-disallow-drop\"></div><div ng-show=\"$select.open && $select.items.length > 0\" class=\"ui-select-dropdown dropdown-menu\"><div class=\"ui-select-header\"></div><div class=\"ui-select-choices\"></div><div class=\"ui-select-footer\"></div></div><div class=\"ui-select-no-choice\"></div></div>");
-$templateCache.put("bootstrap/select.tpl.html","<div class=\"ui-select-container ui-select-bootstrap dropdown\" ng-class=\"{open: $select.open}\"><div class=\"ui-select-match\"></div><span ng-show=\"$select.open && $select.refreshing && $select.spinnerEnabled\" class=\"ui-select-refreshing {{$select.spinnerClass}}\"></span> <input type=\"search\" autocomplete=\"off\" tabindex=\"-1\" aria-expanded=\"true\" aria-label=\"{{ $select.baseTitle }}\" aria-owns=\"ui-select-choices-{{ $select.generatedId }}\" class=\"form-control ui-select-search\" ng-class=\"{ \'ui-select-search-hidden\' : !$select.searchEnabled }\" placeholder=\"{{$select.placeholder}}\" ng-model=\"$select.search\" ng-show=\"$select.open\"><div ng-show=\"$select.open && $select.items.length > 0\" class=\"ui-select-dropdown dropdown-menu\"><div class=\"ui-select-header\"></div><div class=\"ui-select-choices\"></div><div class=\"ui-select-footer\"></div></div><div class=\"ui-select-no-choice\"></div></div>");
-$templateCache.put("bootstrap4/choices.tpl.html","<ul class=\"ui-select-choices ui-select-choices-content\"><li class=\"ui-select-choices-group\" id=\"ui-select-choices-{{ $select.generatedId }}\"><div class=\"divider\" ng-show=\"$select.isGrouped && $index > 0\"></div><div ng-show=\"$select.isGrouped\" class=\"ui-select-choices-group-label dropdown-header\" ng-bind=\"$group.name\"></div><div ng-attr-id=\"ui-select-choices-row-{{ $select.generatedId }}-{{$index}}\" class=\"ui-select-choices-row\" ng-class=\"{active: $select.isActive(this), disabled: $select.isDisabled(this)}\" role=\"option\"><span class=\"ui-select-choices-row-inner\"></span></div></li></ul>");
-$templateCache.put("bootstrap4/footer.tpl.html","<div class=\"ui-select-footer\" ng-transclude=\"\"></div>");
-$templateCache.put("bootstrap4/header.tpl.html","<div class=\"ui-select-header\" ng-transclude=\"\"></div>");
-$templateCache.put("bootstrap4/match-multiple.tpl.html","<span class=\"ui-select-match\"><span ng-repeat=\"$item in $select.selected track by $index\"><span class=\"ui-select-match-item btn btn-default btn-xs\" tabindex=\"-1\" type=\"button\" ng-disabled=\"$select.disabled\" ng-click=\"$selectMultiple.activeMatchIndex = $index;\" ng-class=\"{\'btn-primary\':$selectMultiple.activeMatchIndex === $index, \'select-locked\':$select.isLocked(this, $index)}\" ui-select-sort=\"$select.selected\"><span class=\"close ui-select-match-close\" ng-hide=\"$select.disabled\" ng-click=\"$selectMultiple.removeChoice($index)\">&nbsp;&times;</span> <span uis-transclude-append=\"\"></span></span></span></span>");
-$templateCache.put("bootstrap4/match.tpl.html","<div class=\"ui-select-match\" ng-hide=\"$select.open && $select.searchEnabled\" ng-disabled=\"$select.disabled\" ng-class=\"{\'btn-default-focus\':$select.focus}\"><span tabindex=\"-1\" class=\"btn btn-default form-control ui-select-toggle\" aria-label=\"{{ $select.baseTitle }} activate\" ng-disabled=\"$select.disabled\" ng-click=\"$select.activate()\" style=\"outline: 0;\"><span ng-show=\"$select.isEmpty()\" class=\"ui-select-placeholder text-muted text-truncate\">{{$select.placeholder}}</span> <span ng-hide=\"$select.isEmpty()\" class=\"ui-select-match-text pull-left\" ng-class=\"{\'ui-select-allow-clear\': $select.allowClear && !$select.isEmpty()}\" ng-transclude=\"\"></span> <i class=\"caret pull-right\" ng-click=\"$select.toggle($event)\"></i> <a ng-show=\"$select.allowClear && !$select.isEmpty() && ($select.disabled !== true)\" aria-label=\"{{ $select.baseTitle }} clear\" style=\"margin-right: 10px\" ng-click=\"$select.clear($event)\" class=\"btn btn-sm btn-link pull-right\"><i class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></i></a></span></div>");
-$templateCache.put("bootstrap4/no-choice.tpl.html","<ul class=\"ui-select-no-choice dropdown-menu\" ng-show=\"$select.items.length == 0\"><li ng-transclude=\"\"></li></ul>");
-$templateCache.put("bootstrap4/select-multiple.tpl.html","<div class=\"ui-select-container ui-select-multiple ui-select-bootstrap dropdown form-control\" ng-class=\"{open: $select.open}\"><div><div class=\"ui-select-match\"></div><span ng-show=\"$select.open && $select.refreshing && $select.spinnerEnabled\" class=\"ui-select-refreshing {{$select.spinnerClass}}\"></span> <input type=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" class=\"ui-select-search input-xs\" placeholder=\"{{$select.getPlaceholder()}}\" ng-disabled=\"$select.disabled\" ng-click=\"$select.activate()\" ng-model=\"$select.search\" role=\"combobox\" aria-expanded=\"{{$select.open}}\" aria-label=\"{{$select.baseTitle}}\" ng-class=\"{\'spinner\': $select.refreshing}\" data-disallow-drop=\"data-disallow-drop\"></div><div ng-class=\"{show : $select.open && $select.items.length > 0}\" class=\"ui-select-dropdown dropdown-menu\"><div class=\"ui-select-header\"></div><div class=\"ui-select-choices\"></div><div class=\"ui-select-footer\"></div></div><div class=\"ui-select-no-choice\"></div></div>");
-$templateCache.put("bootstrap4/select.tpl.html","<div class=\"ui-select-container ui-select-bootstrap dropdown\" ng-class=\"{open: $select.open}\"><div class=\"ui-select-match\"></div><span ng-show=\"$select.open && $select.refreshing && $select.spinnerEnabled\" class=\"ui-select-refreshing {{$select.spinnerClass}}\"></span> <input type=\"search\" autocomplete=\"off\" tabindex=\"-1\" aria-expanded=\"true\" aria-label=\"{{ $select.baseTitle }}\" aria-owns=\"ui-select-choices-{{ $select.generatedId }}\" class=\"form-control ui-select-search\" ng-class=\"{ \'ui-select-search-hidden\' : !$select.searchEnabled }\" placeholder=\"{{$select.placeholder}}\" ng-model=\"$select.search\" ng-show=\"$select.open\"><div ng-class=\"{show : $select.open && $select.items.length > 0}\" class=\"ui-select-dropdown dropdown-menu\"><div class=\"ui-select-header\"></div><div class=\"ui-select-choices\"></div><div class=\"ui-select-footer\"></div></div><div class=\"ui-select-no-choice\"></div></div>");
-$templateCache.put("select2/choices.tpl.html","<ul tabindex=\"-1\" class=\"ui-select-choices ui-select-choices-content select2-results\"><li class=\"ui-select-choices-group\" ng-class=\"{\'select2-result-with-children\': $select.choiceGrouped($group) }\"><div ng-show=\"$select.choiceGrouped($group)\" class=\"ui-select-choices-group-label select2-result-label\" ng-bind=\"$group.name\"></div><ul id=\"ui-select-choices-{{ $select.generatedId }}\" ng-class=\"{\'select2-result-sub\': $select.choiceGrouped($group), \'select2-result-single\': !$select.choiceGrouped($group) }\"><li role=\"option\" ng-attr-id=\"ui-select-choices-row-{{ $select.generatedId }}-{{$index}}\" class=\"ui-select-choices-row\" ng-class=\"{\'select2-highlighted\': $select.isActive(this), \'select2-disabled\': $select.isDisabled(this)}\"><div class=\"select2-result-label ui-select-choices-row-inner\"></div></li></ul></li></ul>");
-$templateCache.put("select2/footer.tpl.html","<div class=\"ui-select-footer\" ng-transclude=\"\"></div>");
-$templateCache.put("select2/header.tpl.html","<div class=\"ui-select-header\" ng-transclude=\"\"></div>");
-$templateCache.put("select2/match-multiple.tpl.html","<span class=\"ui-select-match\"><li class=\"ui-select-match-item select2-search-choice\" ng-repeat=\"$item in $select.selected track by $index\" ng-class=\"{\'select2-search-choice-focus\':$selectMultiple.activeMatchIndex === $index, \'select2-locked\':$select.isLocked(this, $index)}\" ui-select-sort=\"$select.selected\"><span uis-transclude-append=\"\"></span> <a href=\"javascript:;\" class=\"ui-select-match-close select2-search-choice-close\" ng-click=\"$selectMultiple.removeChoice($index)\" tabindex=\"-1\"></a></li></span>");
-$templateCache.put("select2/match.tpl.html","<a class=\"select2-choice ui-select-match\" ng-class=\"{\'select2-default\': $select.isEmpty()}\" ng-click=\"$select.toggle($event)\" aria-label=\"{{ $select.baseTitle }} select\"><span ng-show=\"$select.isEmpty()\" class=\"select2-chosen\">{{$select.placeholder}}</span> <span ng-hide=\"$select.isEmpty()\" class=\"select2-chosen\" ng-transclude=\"\"></span> <abbr ng-if=\"$select.allowClear && !$select.isEmpty()\" class=\"select2-search-choice-close\" ng-click=\"$select.clear($event)\"></abbr> <span class=\"select2-arrow ui-select-toggle\"><b></b></span></a>");
-$templateCache.put("select2/no-choice.tpl.html","<div class=\"ui-select-no-choice dropdown\" ng-show=\"$select.items.length == 0\"><div class=\"dropdown-content\"><div data-selectable=\"\" ng-transclude=\"\"></div></div></div>");
-$templateCache.put("select2/select-multiple.tpl.html","<div class=\"ui-select-container ui-select-multiple select2 select2-container select2-container-multi\" ng-class=\"{\'select2-container-active select2-dropdown-open open\': $select.open, \'select2-container-disabled\': $select.disabled}\"><ul class=\"select2-choices\"><span class=\"ui-select-match\"></span><li class=\"select2-search-field\"><input type=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"combobox\" aria-expanded=\"true\" aria-owns=\"ui-select-choices-{{ $select.generatedId }}\" aria-label=\"{{ $select.baseTitle }}\" aria-activedescendant=\"ui-select-choices-row-{{ $select.generatedId }}-{{ $select.activeIndex }}\" class=\"select2-input ui-select-search\" placeholder=\"{{$select.getPlaceholder()}}\" ng-disabled=\"$select.disabled\" ng-hide=\"$select.disabled\" ng-model=\"$select.search\" ng-click=\"$select.activate()\" style=\"width: 34px;\" data-disallow-drop=\"data-disallow-drop\"></li></ul><div class=\"ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active\" ng-class=\"{\'select2-display-none\': !$select.open || $select.items.length === 0}\"><div class=\"ui-select-header\"></div><div class=\"ui-select-choices\"></div><div class=\"ui-select-footer\"></div></div></div>");
-$templateCache.put("select2/select.tpl.html","<div class=\"ui-select-container select2 select2-container\" ng-class=\"{\'select2-container-active select2-dropdown-open open\': $select.open, \'select2-container-disabled\': $select.disabled, \'select2-container-active\': $select.focus, \'select2-allowclear\': $select.allowClear && !$select.isEmpty()}\"><div class=\"ui-select-match\"></div><div class=\"ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active\" ng-class=\"{\'select2-display-none\': !$select.open}\"><div class=\"search-container\" ng-class=\"{\'ui-select-search-hidden\':!$select.searchEnabled, \'select2-search\':$select.searchEnabled}\"><input type=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" ng-class=\"{\'select2-active\': $select.refreshing}\" role=\"combobox\" aria-expanded=\"true\" aria-owns=\"ui-select-choices-{{ $select.generatedId }}\" aria-label=\"{{ $select.baseTitle }}\" class=\"ui-select-search select2-input\" ng-model=\"$select.search\"></div><div class=\"ui-select-header\"></div><div class=\"ui-select-choices\"></div><div class=\"ui-select-no-choice\"></div><div class=\"ui-select-footer\"></div></div></div>");
-$templateCache.put("selectize/choices.tpl.html","<div class=\"ui-select-choices\"><div class=\"ui-select-choices-content selectize-dropdown-content\"><div class=\"ui-select-choices-group optgroup\"><div ng-show=\"$select.isGrouped\" class=\"ui-select-choices-group-label optgroup-header\" ng-bind=\"$group.name\"></div><div role=\"option\" class=\"ui-select-choices-row\" ng-class=\"{active: $select.isActive(this), disabled: $select.isDisabled(this)}\"><div class=\"option ui-select-choices-row-inner\" data-selectable=\"\"></div></div></div></div></div>");
-$templateCache.put("selectize/footer.tpl.html","<div class=\"ui-select-footer\" ng-transclude=\"\"></div>");
-$templateCache.put("selectize/header.tpl.html","<div class=\"ui-select-header\" ng-transclude=\"\"></div>");
-$templateCache.put("selectize/match-multiple.tpl.html","<div class=\"ui-select-match\" data-value=\"\" ng-repeat=\"$item in $select.selected track by $index\" ng-click=\"$selectMultiple.activeMatchIndex = $index;\" ng-class=\"{\'active\':$selectMultiple.activeMatchIndex === $index}\" ui-select-sort=\"$select.selected\"><span class=\"ui-select-match-item\" ng-class=\"{\'select-locked\':$select.isLocked(this, $index)}\"><span uis-transclude-append=\"\"></span> <span class=\"remove ui-select-match-close\" ng-hide=\"$select.disabled\" ng-click=\"$selectMultiple.removeChoice($index)\">&times;</span></span></div>");
-$templateCache.put("selectize/match.tpl.html","<div ng-hide=\"$select.searchEnabled && ($select.open || $select.isEmpty())\" class=\"ui-select-match\"><span ng-show=\"!$select.searchEnabled && ($select.isEmpty() || $select.open)\" class=\"ui-select-placeholder text-muted\">{{$select.placeholder}}</span> <span ng-hide=\"$select.isEmpty() || $select.open\" ng-transclude=\"\"></span></div>");
-$templateCache.put("selectize/no-choice.tpl.html","<div class=\"ui-select-no-choice selectize-dropdown\" ng-show=\"$select.items.length == 0\"><div class=\"selectize-dropdown-content\"><div data-selectable=\"\" ng-transclude=\"\"></div></div></div>");
-$templateCache.put("selectize/select-multiple.tpl.html","<div class=\"ui-select-container selectize-control multi plugin-remove_button\" ng-class=\"{\'open\': $select.open}\"><div class=\"selectize-input\" ng-class=\"{\'focus\': $select.open, \'disabled\': $select.disabled, \'selectize-focus\' : $select.focus}\" ng-click=\"$select.open && !$select.searchEnabled ? $select.toggle($event) : $select.activate()\"><div class=\"ui-select-match\"></div><input type=\"search\" autocomplete=\"off\" tabindex=\"-1\" class=\"ui-select-search\" ng-class=\"{\'ui-select-search-hidden\':!$select.searchEnabled}\" placeholder=\"{{$select.getPlaceholder()}}\" ng-model=\"$select.search\" ng-disabled=\"$select.disabled\" aria-expanded=\"{{$select.open}}\" aria-label=\"{{ $select.baseTitle }}\" data-disallow-drop=\"data-disallow-drop\"></div><div ng-show=\"$select.open\" class=\"ui-select-dropdown selectize-dropdown\" ng-class=\"{\'single\': !$select.multiple, \'multi\': $select.multiple}\"><div class=\"ui-select-header\"></div><div class=\"ui-select-choices\"></div><div class=\"ui-select-footer\"></div></div><div class=\"ui-select-no-choice\"></div></div>");
-$templateCache.put("selectize/select.tpl.html","<div class=\"ui-select-container selectize-control single\" ng-class=\"{\'open\': $select.open}\"><div class=\"selectize-input\" ng-class=\"{\'focus\': $select.open, \'disabled\': $select.disabled, \'selectize-focus\' : $select.focus}\" ng-click=\"$select.open && !$select.searchEnabled ? $select.toggle($event) : $select.activate()\"><div class=\"ui-select-match\"></div><input type=\"search\" autocomplete=\"off\" tabindex=\"-1\" class=\"ui-select-search ui-select-toggle\" ng-class=\"{\'ui-select-search-hidden\':!$select.searchEnabled}\" ng-click=\"$select.toggle($event)\" placeholder=\"{{$select.placeholder}}\" ng-model=\"$select.search\" ng-hide=\"!$select.isEmpty() && !$select.open\" ng-disabled=\"$select.disabled\" aria-label=\"{{ $select.baseTitle }}\"></div><div ng-show=\"$select.open\" class=\"ui-select-dropdown selectize-dropdown\" ng-class=\"{\'single\': !$select.multiple, \'multi\': $select.multiple}\"><div class=\"ui-select-header\"></div><div class=\"ui-select-choices\"></div><div class=\"ui-select-footer\"></div></div><div class=\"ui-select-no-choice\"></div></div>");}]);
+// CONCATENATED MODULE: ./src/themes.js
+
+
+common.run([
+  '$templateCache',
+  function($templateCache) {
+    $templateCache.put(
+      'bootstrap/choices.tpl.html',
+      __webpack_require__(1)
+    );
+    $templateCache.put(
+      'bootstrap/footer.tpl.html',
+      __webpack_require__(6)
+    );
+    $templateCache.put(
+      'bootstrap/header.tpl.html',
+      __webpack_require__(7)
+    );
+    $templateCache.put(
+      'bootstrap/choices.tpl.html',
+      __webpack_require__(1)
+    );
+    $templateCache.put(
+      'bootstrap/match-multiple.tpl.html',
+      __webpack_require__(8)
+    );
+    $templateCache.put(
+      'bootstrap/match.tpl.html',
+      __webpack_require__(9)
+    );
+    $templateCache.put(
+      'bootstrap/no-choice.tpl.html',
+      __webpack_require__(10)
+    );
+    $templateCache.put(
+      'bootstrap/select-multiple.tpl.html',
+      __webpack_require__(11)
+    );
+    $templateCache.put(
+      'bootstrap/select.tpl.html',
+      __webpack_require__(12)
+    );
+
+    $templateCache.put(
+      'bootstrap4/choices.tpl.html',
+      __webpack_require__(2)
+    );
+    $templateCache.put(
+      'bootstrap4/footer.tpl.html',
+      __webpack_require__(13)
+    );
+    $templateCache.put(
+      'bootstrap4/header.tpl.html',
+      __webpack_require__(14)
+    );
+    $templateCache.put(
+      'bootstrap4/choices.tpl.html',
+      __webpack_require__(2)
+    );
+    $templateCache.put(
+      'bootstrap4/match-multiple.tpl.html',
+      __webpack_require__(15)
+    );
+    $templateCache.put(
+      'bootstrap4/match.tpl.html',
+      __webpack_require__(16)
+    );
+    $templateCache.put(
+      'bootstrap4/no-choice.tpl.html',
+      __webpack_require__(17)
+    );
+    $templateCache.put(
+      'bootstrap4/select-multiple.tpl.html',
+      __webpack_require__(18)
+    );
+    $templateCache.put(
+      'bootstrap4/select.tpl.html',
+      __webpack_require__(19)
+    );
+    $templateCache.put(
+      'select2/choices.tpl.html',
+      __webpack_require__(3)
+    );
+    $templateCache.put(
+      'select2/footer.tpl.html',
+      __webpack_require__(20)
+    );
+    $templateCache.put(
+      'select2/header.tpl.html',
+      __webpack_require__(21)
+    );
+    $templateCache.put(
+      'select2/choices.tpl.html',
+      __webpack_require__(3)
+    );
+    $templateCache.put(
+      'select2/match-multiple.tpl.html',
+      __webpack_require__(22)
+    );
+    $templateCache.put(
+      'select2/match.tpl.html',
+      __webpack_require__(23)
+    );
+    $templateCache.put(
+      'select2/no-choice.tpl.html',
+      __webpack_require__(24)
+    );
+    $templateCache.put(
+      'select2/select-multiple.tpl.html',
+      __webpack_require__(25)
+    );
+    $templateCache.put(
+      'select2/select.tpl.html',
+      __webpack_require__(26)
+    );
+    $templateCache.put(
+      'selectize/choices.tpl.html',
+      __webpack_require__(4)
+    );
+    $templateCache.put(
+      'selectize/footer.tpl.html',
+      __webpack_require__(27)
+    );
+    $templateCache.put(
+      'selectize/header.tpl.html',
+      __webpack_require__(28)
+    );
+    $templateCache.put(
+      'selectize/choices.tpl.html',
+      __webpack_require__(4)
+    );
+    $templateCache.put(
+      'selectize/match-multiple.tpl.html',
+      __webpack_require__(29)
+    );
+    $templateCache.put(
+      'selectize/match.tpl.html',
+      __webpack_require__(30)
+    );
+    $templateCache.put(
+      'selectize/no-choice.tpl.html',
+      __webpack_require__(31)
+    );
+    $templateCache.put(
+      'selectize/select-multiple.tpl.html',
+      __webpack_require__(32)
+    );
+    $templateCache.put(
+      'selectize/select.tpl.html',
+      __webpack_require__(33)
+    );
+  }
+]);
+
+// CONCATENATED MODULE: ./src/select.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ var src_select_0 = __webpack_exports__["default"] = ('ui.select');
+
+
+/***/ })
+/******/ ]);
+});

@@ -1,3 +1,5 @@
+import uis from '../common';
+
 uis.directive('uiSelectHeaderGroupSelectable', ['$timeout', function($timeout) {
   return {
     restrict: 'EA',

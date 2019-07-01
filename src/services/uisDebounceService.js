@@ -1,3 +1,5 @@
+import uis from '../common';
+
 /**
  * Debounces functions
  *

@@ -1,3 +1,5 @@
+import uis from '../common';
+
 uis.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
   return {
     restrict: 'EA',

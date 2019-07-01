@@ -1,6 +1,5 @@
 module.exports = function(config) {
   config.set({
-
     // Base path, that will be used to resolve files and exclude
     basePath: '',
 
@@ -15,6 +14,7 @@ module.exports = function(config) {
       'node_modules/angular-mocks/angular-mocks.js',
 
       'dist/select.js',
+      'dist/select.tpl.js',
       'test/helpers.js',
       'test/**/*.spec.js'
     ],
