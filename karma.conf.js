@@ -14,7 +14,6 @@ module.exports = function(config) {
       'node_modules/angular-mocks/angular-mocks.js',
 
       'dist/select.js',
-      'dist/select.tpl.js',
       'test/helpers.js',
       'test/**/*.spec.js'
     ],
@@ -30,7 +29,7 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
 
     // Enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
     // Start these browsers, currently available:
     // - Chrome
@@ -45,6 +44,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: true
   });
 };

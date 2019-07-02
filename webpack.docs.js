@@ -60,7 +60,17 @@ const config = env => {
         },
         {
           test: /\.html$/,
-          use: 'raw-loader'
+          use: [
+            {
+              loader: 'html-loader',
+              options: {
+                minimize: true,
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: false
+              }
+            }
+          ]
         },
         {
           test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,

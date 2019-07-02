@@ -1,6 +1,6 @@
 import angular from 'angular';
 import angularSanitize from 'angular-sanitize';
-import uiSelect from '../dist/select';
+import uiSelect from '../src/select';
 
 import './docs.scss';
 
