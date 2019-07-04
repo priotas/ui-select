@@ -1,5 +1,5 @@
-<div class="ui-select-container ui-select-multiple ui-select-bootstrap4 dropdown form-control" ng-class="{open: $select.open}">
-  <div>
+<div class="ui-select-container ui-select-multiple ui-select-bootstrap4 dropdown form-control d-flex align-items-center" ng-class="{open: $select.open}">
+
     <div class="ui-select-match"></div>
     <span ng-show="$select.open && $select.refreshing && $select.spinnerEnabled" class="ui-select-refreshing {{$select.spinnerClass}}"></span>
     <input type="search"
@@ -7,7 +7,7 @@
            autocorrect="off"
            autocapitalize="off"
            spellcheck="false"
-           class="ui-select-search input-xs"
+           class="ui-select-search border-0 bg-transparent flex-fill"
            placeholder="{{$select.getPlaceholder()}}"
            ng-disabled="$select.disabled"
            ng-click="$select.activate()"
@@ -17,11 +17,11 @@
            aria-label="{{$select.baseTitle}}"
            ng-class="{'spinner': $select.refreshing}"
            data-disallow-drop=data-disallow-drop>
-  </div>
   <div ng-class="{show : $select.open && $select.items.length > 0}" class="ui-select-dropdown dropdown-menu">
     <div class="ui-select-header"></div>
     <div class="ui-select-choices"></div>
     <div class="ui-select-footer"></div>
   </div>
   <div class="ui-select-no-choice"></div>
+  <i class="caret dropdown-toggle" ng-click="$select.toggle($event)"></i>
 </div>

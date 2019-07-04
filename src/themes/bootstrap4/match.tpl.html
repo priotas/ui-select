@@ -1,13 +1,14 @@
-<div class="ui-select-match" ng-hide="$select.open && $select.searchEnabled" ng-disabled="$select.disabled" ng-class="{'btn-default-focus':$select.focus}">
+<div class="ui-select-match d-flex align-items-center" ng-hide="$select.open && $select.searchEnabled" ng-disabled="$select.disabled" ng-class="{'btn-default-focus':$select.focus}">
   <span tabindex="-1"
-      class="form-control ui-select-toggle"
+      class="form-control ui-select-toggle d-flex"
+      ng-class="{'form-control-sm': $select.size === 'sm', 'form-control-lg': $select.size === 'lg'}"
       aria-label="{{ $select.baseTitle }} activate"
       ng-disabled="$select.disabled" 
       ng-click="$select.activate()"
       style="outline: 0;">
-    <span ng-show="$select.isEmpty()" class="ui-select-placeholder text-muted text-truncate">{{$select.placeholder}}</span>
-    <span ng-hide="$select.isEmpty()" class="ui-select-match-text pull-left" ng-class="{'ui-select-allow-clear': $select.allowClear && !$select.isEmpty()}" ng-transclude=""></span>
-    <i class="caret pull-right" ng-click="$select.toggle($event)"></i>
+    <span ng-show="$select.isEmpty()" class="ui-select-placeholder text-muted text-truncate flex-fill">{{$select.placeholder}}</span>
+    <span ng-hide="$select.isEmpty()" class="ui-select-match-text flex-fill" ng-class="{'ui-select-allow-clear': $select.allowClear && !$select.isEmpty()}" ng-transclude=""></span>
+    <i class="caret dropdown-toggle" ng-click="$select.toggle($event)"></i>
     <a ng-show="$select.allowClear && !$select.isEmpty() && ($select.disabled !== true)" aria-label="{{ $select.baseTitle }} clear" style="margin-right: 10px" 
       ng-click="$select.clear($event)" class="btn btn-sm btn-link pull-right">
       <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>

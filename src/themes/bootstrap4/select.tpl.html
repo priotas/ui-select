@@ -1,5 +1,5 @@
-<div class="ui-select-container ui-select-bootstrap4 dropdown" ng-class="{open: $select.open}">
-  <div class="ui-select-match"></div>
+<div class="ui-select-container ui-select-bootstrap4 dropdown d-flex flex-column" ng-class="{open: $select.open}">
+  <div class="ui-select-match d-flex align-items-center"></div>
   
   <span 
     ng-show="$select.open && $select.refreshing && $select.spinnerEnabled" 
@@ -10,11 +10,11 @@
          aria-label="{{ $select.baseTitle }}"
          aria-owns="ui-select-choices-{{ $select.generatedId }}"
          class="form-control ui-select-search"
-         ng-class="{ 'ui-select-search-hidden' : !$select.searchEnabled }"
+         ng-class="{ 'ui-select-search-hidden' : !$select.searchEnabled, 'form-control-sm': $select.size === 'sm', 'form-control-lg': $select.size === 'lg' }"
          placeholder="{{$select.placeholder}}"
          ng-model="$select.search"
          ng-show="$select.open">
-  <div ng-class="{show : $select.open && $select.items.length > 0}" class="ui-select-dropdown dropdown-menu">
+  <div ng-class="{show : $select.open && $select.items.length > 0}" class="ui-select-dropdown dropdown-menu w-100">
     <div class="ui-select-header"></div>
     <div class="ui-select-choices"></div>
     <div class="ui-select-footer"></div>

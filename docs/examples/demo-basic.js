@@ -4,6 +4,9 @@ import countries from './fixtures/countries';
 class BasicExample {
   constructor() {
     this.country = {};
+    this.multipleDemo = {
+      countries: []
+    };
   }
 
   $onInit() {

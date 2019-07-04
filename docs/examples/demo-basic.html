@@ -1,4 +1,5 @@
 <h3 class="docs-header">Basic Input</h3>
+
 <div class="row">
   <div class="col">
     <ui-select ng-model="$ctrl.country.selected"
@@ -12,8 +13,59 @@
   <div class="col">
     <input type="text"
            class="form-control"
-           id="exampleInputEmail1"
-           aria-describedby="emailHelp"
            placeholder="Bootstrap input text">
+  </div>
+</div>
+
+<h3 class="docs-header">Different Sizes</h3>
+
+
+<div class="row">
+  <div class="col">
+    <ui-select ng-model="$ctrl.country.selected"
+               title="Choose a country"
+               size="sm">
+      <ui-select-match placeholder="Enter a country name...">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="country in $ctrl.countries | filter: $select.search">
+        <div ng-bind-html="country.name | highlight: $select.search"></div>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="col">
+    <input type="text"
+           class="form-control form-control-sm"
+           placeholder="Bootstrap input text">
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col">
+    <ui-select ng-model="$ctrl.country.selected"
+               title="Choose a country"
+               size="lg">
+      <ui-select-match placeholder="Enter a country name...">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="country in $ctrl.countries | filter: $select.search">
+        <div ng-bind-html="country.name | highlight: $select.search"></div>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="col">
+    <input type="text"
+           class="form-control form-control-lg"
+           placeholder="form-control-lg">
+  </div>
+</div>
+
+
+<h3 class="docs-header">Multiple</h3>
+
+<div class="row">
+  <div class="col">
+    <ui-select multiple tagging tagging-label="(custom 'new' label)" ng-model="$ctrl.multipleDemo.countries" theme="bootstrap4" sortable="true"   title="Choose a color">
+      <ui-select-match placeholder="Select countries...">{{$item.name}}</ui-select-match>
+      <ui-select-choices repeat="country in $ctrl.countries | filter:$select.search">
+        {{country.name}}
+      </ui-select-choices>
+    </ui-select>
   </div>
 </div>
