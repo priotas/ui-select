@@ -3,9 +3,12 @@
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/utilities';
 
+.ui-select-match, .ui-select-search{
+  cursor: default;
+}
 
 body > .ui-select-bootstrap4.open {
-  z-index: $zindex-dropdown;
+  z-index: $zindex-dropdown;  
 }
 
 .ui-select-bootstrap4 .ui-select-choices,

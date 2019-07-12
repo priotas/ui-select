@@ -1,17 +1,17 @@
-<span class="ui-select-match d-flex align-items-center">
+<span class="ui-select-match d-flex align-items-center flex-wrap">
   <span ng-repeat="$item in $select.selected track by $index"
         class="d-flex align-items-center p-1">
     <button class="ui-select-match-item btn btn-secondary btn-sm text-nowrap d-flex align-items-center text-truncate"
             tabindex="-1"
             type="button"
             ng-disabled="$select.disabled"
-            ng-click="$selectMultiple.activeMatchIndex = $index;"
+            ng-click="$selectMultiple.activeMatchIndex = $index; $select.toggle($event)"
             ng-class="{'btn-primary':$selectMultiple.activeMatchIndex === $index, 'select-locked':$select.isLocked(this, $index)}"
             ui-select-sort="$select.selected">
       <span uis-transclude-append></span>
       <span class="ui-select-match-close ml-1"
             ng-hide="$select.disabled"
-            ng-click="$selectMultiple.removeChoice($index)"> &times;</span>
+            ng-click="$selectMultiple.removeChoice($index);$event.stopPropagation();"> &times;</span>
     </button>
-  </span>
+  </span> 
 </span>

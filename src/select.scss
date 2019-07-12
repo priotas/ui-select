@@ -30,34 +30,26 @@
 
 @-webkit-keyframes ui-select-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 
 @keyframes ui-select-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 
 .ui-select-spin {
-  -webkit-animation: ui-select-spin 2s infinite linear;
   animation: ui-select-spin 2s infinite linear;
 }
 
-.ui-select-refreshing.ng-animate {
-  -webkit-animation: none 0s;
-}
 
 /** Themes */
 @import './themes/bootstrap/styles.scss';
